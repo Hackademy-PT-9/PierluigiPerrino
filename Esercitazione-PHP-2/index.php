@@ -3,17 +3,21 @@
 // ALT + SHIFT + A
 
 
-/* class Company {
+class Company {
 
     public $name;
     public $state;
     public $employees;
+    public static $total = 0;
 
     public function __construct($name, $state, $employees = 0) {
 
         $this->name = $name;
         $this->state = $state;
         $this->employees = $employees;
+        $this->spese();
+        $tot = $this->employees * (1500 * 12); 
+        self::$total += $tot;
 
     }
 
@@ -31,7 +35,7 @@
 
     }
 
-    public function spese() {
+    public function spese() { 
 
         $tot = $this->employees * (1500 * 12); 
 
@@ -39,6 +43,11 @@
 
     }
 
+    public static function GetTotal() {
+
+        return self::$total;
+
+    }
     
 
 }
@@ -51,17 +60,21 @@ $company4 = new Company('Nokia', 'FIN', 10);
 $company5 = new Company('Xioami', 'CHI', 3);
 //var_dump($company1);
 
-$company1->stampa();
-$company2->stampa();
-$company3->stampa();
-$company4->stampa();
-$company5->stampa();
 
-$company1->spese();
-$company2->spese();
-$company3->spese();
-$company4->spese();
-$company5->spese(); */
+// $company1->stampa();
+// $company2->stampa();
+// $company3->stampa();
+// $company4->stampa();
+// $company5->stampa();
+
+// $company1->spese();
+// $company2->spese();
+// $company3->spese();
+// $company4->spese();
+// $company5->spese();
+
+$total = Company::GetTotal();
+echo "Il costo annualle di tutte le compagnie è $total";
 
 
 //ESERCIZIO EXTRA
@@ -76,9 +89,9 @@ $company5->spese(); */
 
 
 
-$testo = readline('Inserisci una parola: ');
+// $testo = readline('Inserisci una parola: ');
 
-ConteggioVocali($testo);
+// ConteggioVocali($testo);
 
 /* for ($i=0; $i < strlen($testo) ; $i++) { 
     
@@ -92,21 +105,21 @@ ConteggioVocali($testo);
 
 echo "$testo = Nella parola $testo ci sono $contatore vocale!"; */
 
-function ConteggioVocali($stringa) {
+// function ConteggioVocali($stringa) {
 
-    $contatore = 0;
-    $array = ['a', 'e', 'i', 'o', 'u'];
+//     $contatore = 0;
+//     $array = ['a', 'e', 'i', 'o', 'u'];
 
-    for ($i=0; $i < strlen($stringa) ; $i++) { 
+//     for ($i=0; $i < strlen($stringa) ; $i++) { 
     
-        if (in_array($stringa[$i], $array)) {
+//         if (in_array($stringa[$i], $array)) {
 
-            $contatore++;
+//             $contatore++;
 
-        }
+//         }
 
-    }
+//     }
 
-    echo "Nella parola $stringa ci sono $contatore vocale!";
+//     echo "Nella parola $stringa ci sono $contatore vocale!";
 
-}
+// }
